@@ -1,21 +1,20 @@
 import './App.css';
 import React from 'react'
+import {connect} from 'react-redux';
+import {fetchShelves} from './actions/fetchShelves'
+import ShelvesContainer from './containers/ShelvesContainer'
 
 class App extends React.Component {
-
-  componentDidMount() {
-    fetch('http://localhost:3000/api/v1/shelves')
-    .then(r => r.json()) 
-    .then(data => console.log(data))
-  }
 
   render() {
     return (
       <div className="App">
-        App
+        <ShelvesContainer />
       </div>
     );
   }
+
+  
 }
 
-export default App;
+export default connect(null, {fetchShelves})(App);
