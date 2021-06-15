@@ -4,6 +4,7 @@ import './index.css';
 import {createStore, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk';
 import {Provider} from 'react-redux';
+import {BrowserRouter as Router} from 'react-router-dom'
 import shelfReducer from './reducers/shelfReducer'
 
 import App from './App';
@@ -15,8 +16,11 @@ let store = createStore(shelfReducer, composeEnhancers(applyMiddleware(thunk)))
 ReactDOM.render(
   // <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <Router>
+        <App />
+      </Router>
     </Provider>
+    
   // </React.StrictMode>
   ,document.getElementById('root')
 );

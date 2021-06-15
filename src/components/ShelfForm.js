@@ -16,6 +16,9 @@ class ShelfForm extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault()
         this.props.addShelf(this.state)
+        this.setState({
+            name: ''
+        })
     }
 
     render() {

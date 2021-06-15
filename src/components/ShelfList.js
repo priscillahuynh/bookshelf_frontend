@@ -1,10 +1,12 @@
 import React from 'react';
+import Shelf from './Shelf'
 
 const ShelfList = (props) => {
+    console.log(props)
     return (
         <div>
             {props.shelves.map(shelf => 
-            <li key={shelf.id}> {shelf.name}</li>)}
+            <div key={shelf.id}><Shelf shelf={shelf}/></div>)}
         </div>
     )
 }
