@@ -1,12 +1,11 @@
 import React from 'react';
-import ShelfForm from '../components/ShelfForm'
+import {connect} from 'react-redux';
+import {Route, Switch} from 'react-router-dom'
+import {fetchShelves} from '../actions/fetchShelves'
 import ShelfList from '../components/ShelfList'
 import Shelf from '../components/Shelf'
-import {connect} from 'react-redux';
-import {fetchShelves} from '../actions/fetchShelves'
-import {Route} from 'react-router-dom'
+import ShelfForm from '../components/ShelfForm'
  
-
 class ShelvesContainer extends React.Component {
     componentDidMount(){
         this.props.fetchShelves()
@@ -15,9 +14,11 @@ class ShelvesContainer extends React.Component {
     render() {
         return(
             <div>
-                <Route path='/shelves/new' component={ShelfForm}/>
-                <Route path='/shelf/:id'render={(routerProps)=> <Shelf {...routerProps} shelves={this.props.shelves}/>}/>
-                <Route exact path='/shelves' render={(routerProps)=> <ShelfList shelves={this.props.shelves}/>}/>
+                <Switch>
+                    <Route path='/shelves/new' component={ShelfForm}/>
+                    <Route path='/shelf/:id' render={(routerProps) => <Shelf {...routerProps} shelves={this.props.shelves}/>}/>
+                    <Route path='/shelves' render={(routerProps) => <ShelfList {...routerProps} shelves={this.props.shelves}/>}/>
+                </Switch>
             </div>
         )
     }    

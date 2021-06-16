@@ -10,7 +10,7 @@ const Shelf =(props) => {
                 {shelf ? shelf.name : null }
             </h2>
                 <p>
-                    <BooksContainer shelf={shelf}/>
+                <BooksContainer shelf={shelf}/>
                 </p>
         </div>
     )
