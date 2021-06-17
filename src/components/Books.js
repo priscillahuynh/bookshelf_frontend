@@ -4,7 +4,7 @@ const Books = (props) => {
     return (
         <div>
             {props.books && props.books.map(book => 
-            <p key={book.id}><img src={book.image_url}/><br/>{book.title} </p>
+            <div key={book.id}><img src={book.image_url} alt="Book"/><br/>{book.title} </div>
             )}
         </div>
     )
