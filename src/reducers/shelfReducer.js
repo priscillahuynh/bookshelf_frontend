@@ -15,6 +15,15 @@ export default function shelfReducer(state={shelves: []}, action) {
                 }
             })
             return {...state, shelves: shelves}
+        case 'DELETE_BOOK':
+            let shelvesTwo = state.shelves.map(shelf => {
+                if(shelf.id === action.payload.id) {
+                    return action.payload
+                } else {
+                    return shelf
+                }
+            })
+            return {...state, shelves: shelvesTwo}
         default: 
             return state 
         
