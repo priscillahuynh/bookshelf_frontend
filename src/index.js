@@ -14,14 +14,11 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 let store = createStore(shelfReducer, composeEnhancers(applyMiddleware(thunk)))
 
 ReactDOM.render(
-  // <React.StrictMode>
     <Provider store={store}>
       <Router>
         <App />
       </Router>
     </Provider>
-    
-  // </React.StrictMode>
   ,document.getElementById('root')
 );
 
