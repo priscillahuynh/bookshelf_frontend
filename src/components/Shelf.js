@@ -1,5 +1,6 @@
 import React from 'react';
 import BooksContainer from '../containers/BooksContainer';
+import ShelfEdit from '../components/ShelfEdit'
 
 const Shelf =(props) => {
     console.log(props)
@@ -9,10 +10,9 @@ const Shelf =(props) => {
         <div>
             <h2>
                 {shelf ? shelf.name : null }
+                <ShelfEdit shelf={shelf}/>
             </h2>
-                <div>
                 <BooksContainer shelf={shelf}/>
-                </div>
         </div>
     )
 }
