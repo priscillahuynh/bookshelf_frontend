@@ -1,12 +1,12 @@
 
 export default function shelfReducer(state={shelves: []}, action) {
-    // debugger
+
     switch(action.type) {
         case 'FETCH_SHELVES':
             return {shelves: action.payload}
         case 'ADD_SHELF':
             return {...state, shelves:[...state.shelves, action.payload]}
-        case 'ADD_BOOK':
+        case 'EDIT_SHELF', 'ADD_BOOK', 'DELETE_BOOK':
             let shelves = state.shelves.map(shelf => {
                 if(shelf.id === action.payload.id) {
                     return action.payload
@@ -15,15 +15,6 @@ export default function shelfReducer(state={shelves: []}, action) {
                 }
             })
             return {...state, shelves: shelves}
-        case 'DELETE_BOOK':
-            let shelvesTwo = state.shelves.map(shelf => {
-                if(shelf.id === action.payload.id) {
-                    return action.payload
-                } else {
-                    return shelf
-                }
-            })
-            return {...state, shelves: shelvesTwo}
         default: 
             return state 
         
