@@ -5,6 +5,7 @@ import {fetchShelves} from '../actions/fetchShelves'
 import ShelfList from '../components/ShelfList'
 import Shelf from '../components/Shelf'
 import ShelfForm from '../components/ShelfForm'
+import { Redirect } from 'react-router-dom'
  
 class ShelvesContainer extends React.Component {
     componentDidMount(){
@@ -15,6 +16,9 @@ class ShelvesContainer extends React.Component {
         return(
             <div>
                 <Switch>
+                    <Route exact path="/">
+                        <Redirect to="/shelves" />
+                    </Route>
                     <Route path='/shelves/new' component={ShelfForm}/>
                     <Route path='/shelf/:id' render={(routerProps) => <Shelf {...routerProps} shelves={this.props.shelves}/>}/>
                     <Route path='/shelves' render={(routerProps) => <ShelfList {...routerProps} shelves={this.props.shelves}/>}/>
