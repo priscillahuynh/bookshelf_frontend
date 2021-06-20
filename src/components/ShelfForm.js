@@ -27,7 +27,7 @@ class ShelfForm extends React.Component {
                <form onSubmit={this.handleSubmit}>
                    <label>Shelf Name</label>
                    <input type='text'value={this.state.name} name='name'onChange={this.handleChange}/> 
-                   <input type='Add a New Shelf'/><br/><br/>
+                   <input type='submit'/><br/><br/>
                </form>
            </div>
         )

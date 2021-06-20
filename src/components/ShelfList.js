@@ -1,16 +1,23 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
+import { deleteShelf } from '../actions/deleteShelf';
+import { connect } from 'react-redux';
 
 const ShelfList = (props) => {
     console.log(props)
+
+    const handleDelete = (shelf) => {
+        props.deleteShelf(shelf.id)
+    }
+
     return (
         <div>
             {props.shelves.map(shelf => 
-            <li key={shelf.id}>
-                <Link to={`/shelf/${shelf.id}`}>{shelf.name}</Link>
-            </li>)}
+            <div key={shelf.id}>
+                <Link to={`/shelf/${shelf.id}`}>{shelf.name}</Link>  <button onClick={() => handleDelete(shelf)}>Delete</button>
+            </div>)}
         </div>
     )
 }
 
-export default ShelfList
+export default connect(null, {deleteShelf})(ShelfList)

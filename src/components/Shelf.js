@@ -1,6 +1,6 @@
 import React from 'react';
 import BooksContainer from '../containers/BooksContainer';
-import ShelfEdit from '../components/ShelfEdit'
+import ShelfEdit from '../components/ShelfEdit';
 
 const Shelf =(props) => {
     console.log(props)
