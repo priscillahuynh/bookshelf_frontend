@@ -18,7 +18,7 @@ const ShelfList = (props) => {
             <ShelfForm/>
             {props.shelves.map(shelf => 
             <div key={shelf.id}>
-                <Link to={`/shelf/${shelf.id}`}>{shelf.name}</Link>  <button onClick={() => handleDelete(shelf)}>Delete</button>
+                <Link to={`/shelf/${shelf.id}`}>{shelf.name}</Link>  <button onClick={() => handleDelete(shelf)} type="button" class="btn btn-outline-secondary btn-sm" >Delete</button>
             </div>)}
         </div>
     )
