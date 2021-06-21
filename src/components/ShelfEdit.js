@@ -29,7 +29,7 @@ class ShelfEdit extends React.Component {
                <form onSubmit={this.handleSubmit}>
                    <label>Edit Shelf Name: </label>
                    <input type='text'value={this.state.name} name='name'onChange={this.handleChange}/> 
-                   <input type='submit'/><br/><br/>
+                   <button class="btn btn-secondary btn-sm" type="submit">Update</button>
                </form>
            </div>
         )

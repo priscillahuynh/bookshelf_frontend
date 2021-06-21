@@ -36,8 +36,8 @@ class BookForm extends React.Component {
                     <input type="text" name="author" value={this.state.author} onChange={this.handleChange}></input> <br></br>           
                 <label>Image Url:</label>
                     <input type="text" name="image_url" value={this.state.image_url} onChange={this.handleChange}></input>  <br></br>          
-                <input type="submit" value="Add New Book"></input>
-                                 
+                {/* <input type="submit" value="Add New Book"></input> */}
+                <button class="btn btn-secondary btn-sm" type="submit">Add New Book</button>
             </form>
         </div>
         )

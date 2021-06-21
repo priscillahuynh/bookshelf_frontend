@@ -14,7 +14,7 @@ const ShelfList = (props) => {
 
     return (
         <div>
-            <Welcome />
+            <Welcome /><br/>
             <ShelfForm/>
             {props.shelves.map(shelf => 
             <div key={shelf.id}>

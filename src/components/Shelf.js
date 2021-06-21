@@ -9,9 +9,9 @@ const Shelf =(props) => {
     return (
         <div>
             <h2>
-                {shelf ? shelf.name : null }
-                <ShelfEdit shelf={shelf}/>
+                {shelf ? shelf.name : null }<br/>
             </h2>
+                <ShelfEdit shelf={shelf}/><br/>
                 <BooksContainer shelf={shelf}/>
         </div>
     )
