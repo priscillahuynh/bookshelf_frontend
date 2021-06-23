@@ -20,9 +20,9 @@ class ShelvesContainer extends React.Component {
                     <Redirect to='/shelves'/>
                 </Route>
                 <Switch>
-                    <Route path='/shelves/new' component={ShelfForm}/>
                     <Route path='/shelf/:id' render={(routerProps) => <Shelf {...routerProps} shelves={this.props.shelves}/>}/>
                     <Route path='/shelf/:id/edit' render={(routerProps) => <Shelf {...routerProps} shelves={this.props.shelves}/>}/>
+                    <Route path='/shelves/new' component={ShelfForm}/>
                     <Route path='/shelves' render={(routerProps) => <ShelfList {...routerProps} shelves={this.props.shelves}/>}/>
                 </Switch>
             </div>

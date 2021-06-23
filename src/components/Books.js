@@ -11,10 +11,9 @@ const Books = (props) => {
     return (
         <div>
             {props.books && props.books.map(book =>
-                <div key={book.id}>
-                    <img src={book.image_url} alt="Book" /><br />{book.title} <button onClick={() => handleDelete(book)} type="button" class="btn btn-outline-secondary btn-sm" >Delete</button>
-                </div>
-            )}
+                <div key={book.id} >
+                    <img src={book.image_url} alt="Book" /><br/><br/> {book.title} <button onClick={() => handleDelete(book)} type="button" class="btn btn-outline-secondary btn-sm" >Delete</button>
+                </div>)}
         </div>
     )
 }

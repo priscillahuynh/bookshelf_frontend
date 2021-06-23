@@ -7,7 +7,7 @@ const Shelf =(props) => {
     let shelf = props.shelves.filter(shelf => shelf.id == props.match.params.id)[0]
     
     return (
-        <div>
+        <div >
             <h2>
                 {shelf ? shelf.name : null }<br/>
             </h2>

@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import { Redirect } from 'react-router';
 import {addShelf} from '../actions/addShelf'
 
 
@@ -19,7 +20,8 @@ class ShelfForm extends React.Component {
         this.props.addShelf(this.state)
         this.setState({
             name: ''
-        })
+        })  
+        this.props.history.push('/shelves') //redirect user back to index page 
     }
 
     render() {
