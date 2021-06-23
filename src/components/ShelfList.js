@@ -2,8 +2,6 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 import { deleteShelf } from '../actions/deleteShelf';
 import { connect } from 'react-redux';
-import Welcome from '../components/Welcome'
-import ShelfForm from '../components/ShelfForm'
 
 const ShelfList = (props) => {
     console.log(props)
@@ -14,7 +12,6 @@ const ShelfList = (props) => {
 
     return (
         <div>
-            <Welcome /><br/>
             <Link to="/shelves/new">Add a New Shelf</Link><br/><br/>
             {props.shelves.map(shelf => 
             <div key={shelf.id}>
