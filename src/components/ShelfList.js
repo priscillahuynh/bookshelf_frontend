@@ -12,10 +12,11 @@ const ShelfList = (props) => {
 
     return (
         <div>
+
             <Link to="/shelves/new">Add a New Shelf</Link><br/><br/>
             {props.shelves.map(shelf => 
             <div key={shelf.id}>
-                <Link to={`/shelf/${shelf.id}`}>{shelf.name}</Link>  <button onClick={() => handleDelete(shelf)} type="button" class="btn btn-outline-secondary btn-sm" >Delete</button>
+                <Link to={`/shelf/${shelf.id}`}>{shelf.name}</Link>  <button onClick={() => handleDelete(shelf)} type="button" className="btn btn-outline-secondary btn-sm" >Delete</button>
             </div>)}
         </div>
     )

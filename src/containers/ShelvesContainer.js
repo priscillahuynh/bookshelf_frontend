@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Route, Switch} from 'react-router-dom'
+import {Route} from 'react-router-dom'
 import {fetchShelves} from '../actions/fetchShelves'
 import ShelfList from '../components/ShelfList'
 import Shelf from '../components/Shelf'
