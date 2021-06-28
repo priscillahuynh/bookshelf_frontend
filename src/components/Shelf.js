@@ -4,8 +4,8 @@ import ShelfEdit from '../components/ShelfEdit';
 
 const Shelf =(props) => {
     console.log(props)
-    let shelf = props.shelves.filter(shelf => shelf.id == props.match.params.id)[0]
-    
+    let shelf = props.shelves.find(shelf => shelf.id === parseInt(props.match.params.id))
+
     return (
         <div >
             <h2>
