@@ -12,7 +12,6 @@ const ShelfList = (props) => {
 
     return (
         <div>
-
             <Link to="/shelves/new">Add a New Shelf</Link><br/><br/>
             {props.shelves.map(shelf => 
             <div key={shelf.id}>
